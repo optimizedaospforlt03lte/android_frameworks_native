@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2012 The Android Open Source Project
+# Copyright (C) 2016 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,13 +14,12 @@
 # limitations under the License.
 #
 
-# Provides overrides to configure the Dalvik heap for a 2G phone
-# 192m of RAM gives enough space for 5 8 megapixel camera bitmaps in RAM.
+# Provides overrides to configure the Dalvik heap for a 4G phone
 
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapstartsize=8m \
-    dalvik.vm.heapgrowthlimit=288m \
-    dalvik.vm.heapsize=768m \
+    dalvik.vm.heapgrowthlimit=384m \
+    dalvik.vm.heapsize=1024m \
     dalvik.vm.heaptargetutilization=0.75 \
-    dalvik.vm.heapminfree=2m \
-    dalvik.vm.heapmaxfree=8m
+    dalvik.vm.heapminfree=4m \
+    dalvik.vm.heapmaxfree=16m
