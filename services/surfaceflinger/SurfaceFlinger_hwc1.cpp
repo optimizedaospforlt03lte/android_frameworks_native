@@ -497,8 +497,8 @@ void SurfaceFlinger::init() {
     // set SFEventThread to SCHED_RR to minimize jitter
     struct sched_param param = {0};
     param.sched_priority = 4;
-    if (sched_setscheduler(mSFEventThread->getTid(), SCHED_RR, &param) != 0) {
-        ALOGE("Couldn't set SCHED_RR for SFEventThread");
+    if (sched_setscheduler(mSFEventThread->getTid(), SCHED_FIFO, &param) != 0) {
+        ALOGE("Couldn't set SCHED_FIFO for SFEventThread");
     }
 
     // Initialize the H/W composer object.  There may or may not be an
